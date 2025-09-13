@@ -4,6 +4,11 @@ namespace OOP_TP1.Exercices
 {
     public static class Delta
     {
+        /// <summary>
+        /// 1.
+        /// Créer le programme Delta qui permet de solutionner
+        /// une équation de second degré en R : ax2 + bx + c = 0.
+        /// </summary>
         public static void Run()
         {
             Console.WriteLine("Résolution de l'équation du second degré : ax² + bx + c = 0");

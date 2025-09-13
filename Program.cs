@@ -1,12 +1,10 @@
-﻿using System;
-using OOP_TP1.Exercices;
+﻿using OOP_TP1.Exercices;
 
 class Program
 {
-	static void Main(string[] args)
+	static void Main()
 	{
-		while (true)
-		{
+		
 			Console.WriteLine("\n=== Menu des Exercices ===");
 			Console.WriteLine("1. Delta (équation du second degré)");
 			Console.WriteLine("2. Division sans / ni %");
@@ -29,12 +27,14 @@ class Program
                 case "1":
                     Delta.Run();
                     break;
-                
+                case "2":
+	                Division.Run();
+	                break;
                 default:
                     Console.WriteLine("(L'exercice n'est pas encore implémenté)");
                     break;
             }
 			
-		}
+		
 	}
 }
