@@ -18,7 +18,7 @@ public static class Division
         int resultat = 1;
         int rest = numerator - denominator;
         
-        while (rest > denominator )
+        while (rest >= denominator )
         {
             rest -= denominator; 
             resultat++;
