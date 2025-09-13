@@ -36,6 +36,9 @@ class Program
                 case "4":
 	                EcartType.Run();
 	                break;
+                case "5":
+	                ClasserPhrase.Run();
+	                break;
                 default:
                     Console.WriteLine("(L'exercice n'est pas encore implémenté)");
                     break;
