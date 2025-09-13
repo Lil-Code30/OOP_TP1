@@ -33,6 +33,9 @@ class Program
                 case "3":
 	                HexaToBin.Run();
 	                break;
+                case "4":
+	                EcartType.Run();
+	                break;
                 default:
                     Console.WriteLine("(L'exercice n'est pas encore implémenté)");
                     break;
