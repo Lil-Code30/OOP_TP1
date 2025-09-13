@@ -17,13 +17,13 @@ public static class Division
 
         int resultat = 1;
         int rest = numerator - denominator;
-
-        do
+        
+        while (rest > denominator )
         {
             rest -= denominator; 
             resultat++;
 
-        } while (rest > denominator );
+        } 
     
         
         Console.WriteLine($"{numerator} / {denominator} = {resultat} avec un reste de {rest}");
