@@ -30,6 +30,9 @@ class Program
                 case "2":
 	                Division.Run();
 	                break;
+                case "3":
+	                HexaToBin.Run();
+	                break;
                 default:
                     Console.WriteLine("(L'exercice n'est pas encore implémenté)");
                     break;
