@@ -39,6 +39,12 @@ class Program
                 case "5":
 	                ClasserPhrase.Run();
 	                break;
+                case "6":
+	                FusionMots.Run();
+	                break;
+                case "007":
+	                FusionMots2.Run();
+	                break;
                 default:
                     Console.WriteLine("(L'exercice n'est pas encore implémenté)");
                     break;
