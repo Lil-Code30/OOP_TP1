@@ -15,10 +15,10 @@ public static class HexaToBin
          */
         string result = "";
         Dictionary<char, string> binaryNumbers = new Dictionary<char, string>()
-        {
+        { 
             { '0', "0000" },
             { '1', "0001" },
-            { '2', "0010" },
+            { '2', "0010"},
             { '3', "0011" },
             { '4', "0100" },
             { '5', "0101" },
