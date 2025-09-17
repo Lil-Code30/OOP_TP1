@@ -17,12 +17,19 @@ public class ClasserPhrase
 
         Dictionary<string, int> phrasesAndWeights = new Dictionary<string, int>();
         
-        Console.Write("Enter words separated by commas (,) : ");
+        Console.Write("Entrer le nombre de phrases: ");
+        int n = int.Parse(Console.ReadLine());
         
-        string[] wordsArr = Console.ReadLine().Split(',');
+        string[] phrases = new string[n];
+
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write("Enter un phrase: ");
+            phrases[i] =  Console.ReadLine();
+        }
         
         // wordsArr = ['Dog','Cat', 'fish']
-        foreach (string word in wordsArr)
+        foreach (string word in phrases)
         {
             // word = Dog len = 3
             int poids = 0;
