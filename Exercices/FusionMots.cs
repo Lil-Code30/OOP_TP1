@@ -28,12 +28,9 @@ public class FusionMots
 
         if (word1.Length != word2.Length)
         {
-            int k = shortestWord.Length;
-        
-            for (int i = 1; i <= longestWord.Length - shortestWord.Length ; i++)
-            {
-                word3 += Convert.ToChar(longestWord[k]);
-                k++;
+            for (int i = shortestWord.Length; i < longestWord.Length  ; i++)
+            { 
+                word3 += Convert.ToChar(longestWord[i]);
             }
         }
         
