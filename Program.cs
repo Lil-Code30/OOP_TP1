@@ -4,8 +4,11 @@ class Program
 {
 	static void Main()
 	{
-		
-			Console.WriteLine("\n=== Menu des Exercices ===");
+			Console.WriteLine("============================");
+			Console.WriteLine("==    TP#1 : INF11107     ==");
+			Console.WriteLine("============================");
+			Console.WriteLine();
+			Console.WriteLine("==== Menu des Exercices ====");
 			Console.WriteLine("1. Delta (équation du second degré)");
 			Console.WriteLine("2. Division sans / ni %");
 			Console.WriteLine("3. HexaToBin (conversion hexadécimal → binaire)");
@@ -42,14 +45,13 @@ class Program
                 case "6":
 	                FusionMots.Run();
 	                break;
-                case "007":
-	                FusionMots2.Run();
+                case "7":
+	                AffCarracteres.Run();
 	                break;
                 default:
                     Console.WriteLine("(L'exercice n'est pas encore implémenté)");
                     break;
             }
-			
-		
+            
 	}
 }
