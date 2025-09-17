@@ -15,15 +15,15 @@ public static class Division
         Console.Write("Enter the denominator of the division: ");
         int denominator = int.Parse(Console.ReadLine());
 
-        int resultat = 1;
-        int rest = numerator - denominator;
+        int resultat = 0;
+        int rest = numerator;
         
-        while (rest >= denominator )
+        
+        do
         {
             rest -= denominator; 
             resultat++;
-
-        } 
+        }while(rest >= denominator);
     
         
         Console.WriteLine($"{numerator} / {denominator} = {resultat} avec un reste de {rest}");
