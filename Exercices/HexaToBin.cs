@@ -39,9 +39,17 @@ public static class HexaToBin
         string hexaNumber = Console.ReadLine().ToUpper(); // FD
 
         for (int i = 0; i < hexaNumber.Length; i++)
-        {   
+        {
+            if (binaryNumbers.ContainsKey(hexaNumber[i]))
+            {
+                result +=  binaryNumbers[hexaNumber[i]];
+            }
+            else
+            {
+                Console.WriteLine($"Caractère invalide: {hexaNumber[i]}");
+                return;
+            }
             
-            result +=  binaryNumbers[hexaNumber[i]];
         }
         
         Console.WriteLine($"{hexaNumber} de Hexadecimal en Binaire : {result}");
