@@ -10,19 +10,21 @@ public static class EcartType
     /// </summary>
     public static void Run()
     {
-        Console.Write("Enter numbers separated by commas, (Nb: no spaces should be added): ");
-        string mergeNumbers = Console.ReadLine(); // 2,4,4,4,5,5,7,9
+        Console.Write("Entrer le nombre d'elements dans le tableau");
+        int n = int.Parse(Console.ReadLine());
+        int[] numbersArr = new int[n];
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write("Entrer un nombre: ");
+            numbersArr[i] = int.Parse(Console.ReadLine());
+        }
         
-        string[] numbersArr = mergeNumbers.Split(',');
-        
-        int n = numbersArr.Length;
-    
         int total = 0;
         
 
         for (int i = 0; i < n; i++)
         {
-            total += int.Parse(numbersArr[i]); // mean = mean + numbersArr[i]    
+            total += numbersArr[i];    
              
         }
         int mean = total / n;
@@ -31,7 +33,7 @@ public static class EcartType
 
         for (int i = 0; i < n; i++)
         {   
-            int x = int.Parse(numbersArr[i]) - mean;
+            int x = Math.Abs(numbersArr[i] - mean);
             topSum += Math.Pow(x, 2);
         }
         
