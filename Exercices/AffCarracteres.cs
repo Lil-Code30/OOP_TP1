@@ -8,23 +8,36 @@ public class AffCarracteres
     /// </summary>
     public static void Run()
     {
-        char[] alphabet = new char[]
-        {
-            'A','B','C','D','E','F','G','H','I','J','K','L','M',
-            'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
-        };
-    
+
+        char letter = 'A';
         Console.Write("Entrez le nombre de lignes: ");
         int nombreLignes = int.Parse(Console.ReadLine());
         
         Console.Write("Entrez le nombre de lettres a utiliser: ");
         int nombreLettre = int.Parse(Console.ReadLine());
 
-        for (int i = nombreLignes; i < 0; i--)
+        for (int i = nombreLignes; i >= 1; i--)
         {
-            for (int j = 0; j < i; j++)
+            for (int j = 0; j <= nombreLignes - i; j++)
             {
-                Console.Write(alphabet[j]);
+                Console.Write(" ");
+            }
+
+            for (int k = 0; k < i; k++)
+            {
+                int position = letter - 'A' + 1;
+                if (position <= nombreLettre)
+                {
+                    Console.Write($" {letter}");
+                }
+                else
+                {
+                    letter = 'A';
+                    Console.Write($" {letter}");
+                }
+
+                letter++;
+
             }
             Console.WriteLine();
         }
