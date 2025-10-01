@@ -48,6 +48,9 @@ class Program
                 case "7":
 	                AffCarracteres.Run();
 	                break;
+                case "8":
+	                MachineASous.Run();
+	                break;
                 default:
                     Console.WriteLine("(L'exercice n'est pas encore implémenté)");
                     break;
