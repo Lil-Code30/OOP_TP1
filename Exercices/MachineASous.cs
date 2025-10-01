@@ -14,46 +14,57 @@ public class MachineASous
         Console.Write("Entrer un montant: ");
         int montant = int.Parse(Console.ReadLine());
         
-        Dictionary<int, int> numberAndTime = new Dictionary<int, int>();
-
         int[] randomNumbers = new int[5];
         Random rnd = new Random();
-        int counter = 1;
         
+        bool jackpot5 = false;
+        bool jackpot3_4 = false;
+        int counter;
         for (int i = 0; i < 5; i++)
         {
             int randomNumber = rnd.Next(0, 9);
             randomNumbers[i] = randomNumber;
         }
 
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 1; j < 5; j++)
-            {
-                if (randomNumbers[i] == randomNumbers[j])
-                {
-                    if(numberAndTime.ContainsKey(randomNumbers[i]))
-                    {
-                        numberAndTime[randomNumbers[i]]++;
-                    }
-                    else
-                    {
-                        numberAndTime.Add(randomNumbers[i], counter);
-                    }
-                }
-                
-            }
-           
-        }
-
-        foreach (KeyValuePair<int, int> pair in numberAndTime)
-        {
-            Console.WriteLine($"{pair.Key} counter: {pair.Value}");
-        }
-        
         for (int i = 0; i < randomNumbers.Length; i++)
         {
-            Console.Write(randomNumbers[i]);
+            counter = 0;
+            for (int j = 0; j < randomNumbers.Length; j++)
+            {
+                if (randomNumbers[j] == randomNumbers[i])
+                {
+                    counter++;
+                }
+            }
+
+            if (counter == 5)
+            {
+                jackpot5 = true;
+            }else if(counter == 4 || counter == 3)
+            {
+                jackpot3_4 = true;
+            }
+        }
+        
+        Console.Write("Vos nombres sont les: ");
+        for (int i = 0; i < randomNumbers.Length; i++)
+        {
+            Console.Write($"[ {randomNumbers[i]} ] ");
+        }
+        
+        Console.WriteLine();
+        if (jackpot5)
+        {
+            double gain = Math.Pow(montant, 5);
+            Console.WriteLine($"Jackpot! Vous gagnez {gain:F2} $CAD.");
+        }
+        else if (jackpot3_4)
+        {
+            Console.WriteLine($"Vous récupérez votre mise de {montant} $CAD.");
+        }
+        else
+        {
+            Console.WriteLine("Désolé, vous perdez votre mise.");
         }
     }
 }
