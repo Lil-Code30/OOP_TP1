@@ -1,14 +1,11 @@
 namespace OOP_TP1.Exercices;
 
-public class AffCarracteres
-{
+public class AffCarracteres{
     /// <summary>
     /// Créer le programme "AffCarracteres" qui demande le nombre de lignes à afficher,
     /// le nombre de lettres à utiliser et affiche les lettres (commençant par "A")
     /// </summary>
-    public static void Run()
-    {
-
+    public static void Run(){
         char letter = 'A';
         Console.Write("Entrez le nombre de lignes: ");
         int nombreLignes = int.Parse(Console.ReadLine());
@@ -20,6 +17,7 @@ public class AffCarracteres
         {
             for (int j = 0; j <= nombreLignes - i; j++)
             {
+        
                 Console.Write(" ");
             }
 

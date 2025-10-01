@@ -51,6 +51,9 @@ class Program
                 case "8":
 	                MachineASous.Run();
 	                break;
+                case "9":
+	                MachineASous.Run();
+	                break;
                 default:
                     Console.WriteLine("(L'exercice n'est pas encore implémenté)");
                     break;

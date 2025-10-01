@@ -1,7 +1,7 @@
 namespace OOP_TP1.Exercices;
 
 public class ClasserPhrase
-{   
+{
     /// <summary>
     /// 5.
     /// Sachant que chaque lettre a un poids (1 pour A, 2 pour B…26 pour Z),
@@ -10,51 +10,46 @@ public class ClasserPhrase
     /// </summary>
     public static void Run()
     {
-        char[] alphabet = {
+        char[] alphabet =
+        {
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
             'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
         };
 
         Dictionary<string, int> phrasesAndWeights = new Dictionary<string, int>();
-        
-        Console.Write("Entrer le nombre de phrases: ");
-        int n = int.Parse(Console.ReadLine());
-        
+
+        Console.WriteLine("=== Classement de phrases par poids ===");
+        Console.Write("Combien de phrases voulez-vous saisir? ");
+        int n = Convert.ToInt32(Console.ReadLine());
         string[] phrases = new string[n];
 
         for (int i = 0; i < n; i++)
         {
-            Console.Write("Enter un phrase: ");
-            phrases[i] =  Console.ReadLine();
+            Console.Write($"Entrez la phrase (justes mots separer de l'espace: ");
+            phrases[i] = Console.ReadLine();
         }
         
-        // wordsArr = ['Dog','Cat', 'fish']
-        foreach (string word in phrases)
+        foreach (string phrase in phrases)
         {
-            // word = Dog len = 3
-            int poids = 0;
-            for (int i = 0; i < word.Length; i++)
+            int poidsPhrase = 0;
+            
+            foreach(char c in phrase.ToUpper())
             {
-               
-                // abc = 1 + 2 + 3 
-                // poids = alphabet.IndexOf(letter) + 1; 
-                char letter = Convert.ToChar(word[i]); // D
-                int letterIndex = Array.IndexOf(alphabet, char.ToUpper(letter));
-                
-                // total weight of the current word
-                poids += letterIndex + 1;
+                if (c >= 'A' && c <= 'Z')
+                {
+                    int letterIndex = Array.IndexOf(alphabet, c);
+                    poidsPhrase += letterIndex + 1;
+                }
             }
-            // {'dog', 26} added to phrasesAndWeights
-            phrasesAndWeights.Add(word, poids);
+            
+            phrasesAndWeights.Add(phrase, poidsPhrase);
         }
-    
-        // sort the array in ascending order
-        var sortedPhrasesAndWeights = phrasesAndWeights.OrderBy( entry => entry.Value);
-         
-        foreach (KeyValuePair<string, int> pair in sortedPhrasesAndWeights)
-        {
+        
+        
+        foreach (KeyValuePair<string, int> pair in phrasesAndWeights)
+        { 
             Console.WriteLine(pair.Key + ": " + pair.Value);
         }
-        
-    }
+    } 
 }
+

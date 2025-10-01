@@ -53,6 +53,8 @@ public class MachineASous
         }
         
         Console.WriteLine();
+        // jackpot5 = false;
+        // jackpot3_4 = false;
         if (jackpot5)
         {
             double gain = Math.Pow(montant, 5);
