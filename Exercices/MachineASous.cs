@@ -1,8 +1,7 @@
 namespace OOP_TP1.Exercices;
 
 public class MachineASous
-{
-    /// <summary>
+{    /// <summary>
     /// Créer le programme "MachineÀSous" qui demande à l’utilisateur de saisir un montant et lui génère 5 entiers
     /// entre 0 et 9. Si les 5 entiers sont égaux, il gagne le jackpot (le montant saisi à la puissance 5).
     /// Si un entier se répète 3 ou 4 fois, l’utilisateur récupère son montant.
@@ -11,6 +10,7 @@ public class MachineASous
     /// </summary>
     public static void Run()
     {
+        Console.WriteLine("=== Machine à sous ===");
         Console.Write("Entrer un montant: ");
         int montant = int.Parse(Console.ReadLine());
         
@@ -22,9 +22,23 @@ public class MachineASous
         int counter;
         for (int i = 0; i < 5; i++)
         {
-            int randomNumber = rnd.Next(0, 9);
+            int randomNumber = rnd.Next(0, 10);
             randomNumbers[i] = randomNumber;
         }
+
+        // --- Début du code truqué ---
+        //List<int> dejaPris = new List<int>();
+        //for (int i = 0; i < 5; i++)
+        //{
+        //    int randomNumber;
+        //    do
+        //    {
+        //        randomNumber = rnd.Next(0, 10);
+        //    } while (dejaPris.Contains(randomNumber));
+        //    randomNumbers[i] = randomNumber;
+        //    dejaPris.Add(randomNumber);
+        //}
+        // --- Fin du code truqué ---
 
         for (int i = 0; i < randomNumbers.Length; i++)
         {
@@ -53,8 +67,6 @@ public class MachineASous
         }
         
         Console.WriteLine();
-        // jackpot5 = false;
-        // jackpot3_4 = false;
         if (jackpot5)
         {
             double gain = Math.Pow(montant, 5);
