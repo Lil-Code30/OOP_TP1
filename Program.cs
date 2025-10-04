@@ -52,7 +52,7 @@ class Program
 	                MachineASous.Run();
 	                break;
                 case "9":
-	                MachineASous.Run();
+	                QCM.Run();
 	                break;
                 default:
                     Console.WriteLine("(L'exercice n'est pas encore implémenté)");
